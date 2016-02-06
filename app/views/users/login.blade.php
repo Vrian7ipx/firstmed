@@ -91,63 +91,85 @@ body {
 
 @section('body')
 
+<body style="background:#F7F7F7;">
+    {{ Form::open(array('url' => '/login')) }}
+    <div class="">
+        <a class="hiddenanchor" id="toregister"></a>
+        <a class="hiddenanchor" id="tologin"></a>
 
-<div class="container-fluid">
+        <div id="wrapper">
+            <div id="login" class="animate form">
+                <section class="login_content">
+                    <form action="{{URL::to('login')}}" >
+                        <h1>iSysmed</h1>
+                        <div>
+                            <input type="text" name="username" class="form-control" placeholder="Nombre de Usuario" <?php if(Session::has('b_user')){ echo "value='".Session::get('b_user')."'";}?> required />
+                        </div>
+                        <div>
+                            <input type="password" name="password" class="form-control" placeholder="Contraseña" <?php if(Session::has('b_pass')){ echo "value='".Session::get('b_pass')."'";}?> required />
+                        </div>
+                        <div>
+                            <a class="btn btn-default submit" type="submit" >Ingresar</a>
+                            <a class="reset_pass" href="#">Lost your password?</a>
+                        </div>
+                        <div class="clearfix"></div>
+                                        
+                        <div class="separator">
 
-     {{ Form::open(array('url' => '/login')) }}
+                            <p class="change_link">Eres nuevo?
+                                <a href="#toregister" class="to_register"> Regístrate</a>
+                            </p>
+                            <div class="clearfix"></div>
+                            <br />
+                            <div>
+                                <h1><i class="fa fa-paw" style="font-size: 26px;"></i> Gentelella Alela!</h1>
 
-    <div class="row">
-        <div class="col-xs-12 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-        <div class="text-right">
-                <a href="page_register.html" class="txt-default">Need an account?</a>
+                                <p>©2016 Todos los derechos resevados. www.creatumundo.com.bo</p>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- form -->
+                </section>
+                <!-- content -->
             </div>
-<div class="box">       
-            <div class="box-content">
-       		  <!-- <img class="profile-img" src="{{ asset('images/login-factura-virtual.png') }}" /> -->
+            <div id="register" class="animate form">
+                <section class="login_content">
+                    <form>
+                        <h1>Create Account</h1>
+                        <div>
+                            <input type="text" class="form-control" placeholder="Username" required="" />
+                        </div>
+                        <div>
+                            <input type="email" class="form-control" placeholder="Email" required="" />
+                        </div>
+                        <div>
+                            <input type="password" class="form-control" placeholder="Password" required="" />
+                        </div>
+                        <div>
+                            <a class="btn btn-default submit" href="index.html">Submit</a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="separator">
 
-                    {{-- <div class="col-md-2"></div> --}}
-                {{-- <div class="form-group "> --}}
-                <p></p>
-                <div class="input-group">
-                    <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-user" aria-hidden="true"></span></span>
-                    <input type="text" name="username" placeholder="Usuario" class="form-control" <?php if(Session::has('b_user')){ echo "value='".Session::get('b_user')."'";}?>   required/>
-                </div>
-                <p></p>
-                <div class="input-group">
-                    <span class="input-group-addon" id="sizing-addon2"><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></span>{{-- ion-android-lock --}}
-                    <input type="password" name="password" placeholder="Contraseña" class="form-control" <?php if(Session::has('b_pass')){ echo "value='".Session::get('b_pass')."'";}?> required/>
-                </div>
-                <p></p>
-                
-                <p>
-                    @if (Session::has('error_login'))
-                    <span class="error">{{Session::get('error_login')}}</span>
-                    @endif
-                </p>
-               
-               
-               
-                <center>
-                {{ Form::button('Iniciar Sesión',array('type'=>'submit','class'=>'btn btn-primary')) }}
+                            <p class="change_link">Already a member ?
+                                <a href="#tologin" class="to_register"> Log in </a>
+                            </p>
+                            <div class="clearfix"></div>
+                            <br />
+                            <div>
+                                <h1><i class="fa fa-paw" style="font-size: 26px;"></i> Gentelella Alela!</h1>
 
-               {{--  <br>
-                 <p></p>
-
-                 <div class="alert alert-info" role="alert"> Credenciales para ver cuenta demo:
-
-                     <p>
-                    <b>Usuario:</b> facturacion<br>
-                    <b>Contrase&ntilde;a:</b> virtual
-                </p>
-                </div> --}}
-                </center>
+                                <p>©2015 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- form -->
+                </section>
+                <!-- content -->
             </div>
-        </div>
         </div>
     </div>
 
-    {{ Form::close()}}
-
-</div>
+</body>
 
 @stop
