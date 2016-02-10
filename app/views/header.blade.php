@@ -333,7 +333,25 @@
             <!-- /top navigation -->
             <!-- page content -->
             <div class="right_col" role="main">
-            @yield('content')
+            <br>
+              <div>
+                <div class="row top_tiles">
+                  <div class="content-header">
+                  <h1>
+                    @yield('encabezado')
+                    <small>@yield('encabezado_descripcion')</small>
+                  </h1> 
+                  </div>
+                  <div class="row">
+                  <div class="col-md-12">
+                  <div class="x_panel">
+                  <!--EN ESTA PARTE COLOCAR LOS MENSAJES DE ALERTA-->
+                    @yield('content')
+                    </div>
+                    </div>
+                    </div>
+                </div>
+              </div>
             </div>
             <!-- footer content -->
                 <footer>
