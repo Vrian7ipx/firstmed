@@ -12,11 +12,11 @@
  
     
     {{ HTML::style('vendor/gentellela/css/bootstrap.min.css') }}
-    {{ HTML::style('vendor/gentellela/css/shCoreDefault.css', array('media' => 'screen')) }}    
+    {{-- HTML::style('vendor/gentellela/css/shCoreDefault.css', array('media' => 'screen')) --}}    
     {{ HTML::style('vendor/gentellela/fonts/css/font-awesome.min.css') }}
     {{ HTML::style('vendor/gentellela/css/animate.min.css') }}
     
-    {{ HTML::style('vendor/gentellela/css/icheck/flat/green.css') }}
+    
 
 
      
@@ -33,7 +33,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
     <!-- Admin lTE -->    
        {{-- HTML::style('vendor/AdminLTE2/plugins/iCheck/flat/blue.css', array('media' => 'screen')) --}}
        {{ HTML::style('vendor/AdminLTE2/plugins/morris/morris.css', array('media' => 'screen')) }}
@@ -47,12 +47,26 @@
        {{ HTML::script('vendor/AdminLTE2/dist/js/app.js') }}
        {{ HTML::script('vendor/AdminLTE2/dist/js/demo.js') }}
        {{ HTML::script('vendor/AdminLTE2/plugins/datepicker/bootstrap-datepicker.js') }}
+
+       <!-- GENTELLELA CSS-->
+    {{ HTML::style('vendor/gentellela/css/icheck/flat/green.css') }}
+    {{ HTML::style('vendor/gentellela/css/custom.css') }}
+    <!-- GENTELLELA JS -->
+    
+    {{ HTML::script('vendor/gentellela/js/wizard/jquery.smartWizard.js') }} 
+    {{ HTML::script('vendor/gentellela/js/icheck/icheck.min.js') }}
+    {{ HTML::script('vendor/gentellela/js/nicescroll/jquery.nicescroll.min.js') }}
+    {{ HTML::script('vendor/gentellela/js/validator/validator.js') }}
+    {{ HTML::script('vendor/gentellela/js/custom.js') }}
+
+
+
     <link href="{{ asset('favicon.ico') }}" rel="icon" type="image/x-icon">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
     @yield('head')
   </head>
-  <body>      
+  <body style="background:#F7F7F7;">      
         @yield('body')
   </body>
 </html>

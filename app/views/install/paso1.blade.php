@@ -18,7 +18,7 @@
           <div class="panel panel-default">
 
               <div class="panel-heading">
-                  <h3> Por favor completa la siguiente información necesaria para poder facturar </h3>
+                  <h3>Complete la siguiente información básica para configurar su cuenta.</h3>
               </div>
 
               <div class="panel-body" >
@@ -50,17 +50,31 @@
                   @endif
 
                    <div class="row">
+                      <div id="wizard_verticle" class="form_wizard wizard_verticle">            
+                        <ul class="list-unstyled wizard_steps">
+                            <li>
+                                <a href="#step-11" >
+                                    <span class="step_no">1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#step-22">
+                                    <span class="step_no">2</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#step-33" class="disabled">
+                                    <span class="step_no">3</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#step-44" class="disabled">
+                                    <span class="step_no">4</span>
+                                </a>
+                            </li>
+                          </ul>
+                      </div>
 
-                              <div class="col-md-3">
-
-                                  <ul class="nav nav-pills nav-stacked">
-
-                                      <li role="presentation" ><a href="#"><span class="badge">1</span> Tipos de Documentos</a></li>
-                                      <li role="presentation" class="active"><a href="#">  <span class="badge">2</span> Casa Matriz</a></li>
-                                      <li role="presentation"><a href="#"><span class="badge">3</span> Perfil de Administrador</a></li>
-                                  </ul>
-
-                              </div>
 
                               {{ Form::hidden('number_branch', '0')}}
 
@@ -82,8 +96,8 @@
 
                                                     <legend>Sucursal</legend>
                                                     <label>Nombre de la Sucursal *</label>
-                                                    <input type="text" name ="branch_name" class="form-control" placeholder="Nombre de Sucursal"  pattern=".{2,}" title="Ingrese el Nombre Genérico de la Sucursal" required>
-                                                    <p></p>
+                                                    <input type="text" name ="branch_name" class="form-control" data-validate-length-range="6" placeholder="Nombre de Sucursal"  title="Ingrese el Nombre Genérico de la Sucursal" required>
+                                                      <p></p>
                                                     <input type="text" name ="number_branch" class="form-control" value="Casa Matriz ó Sucursal 0" disabled>
 
                                                     <p></p>
@@ -94,9 +108,14 @@
 
                                                       {{---documento consulta anidada--}}
                                                     <div class="list-group">
+                                                        <ul class="to_do">
                                                         @foreach($documentos as $type_document)
-                                                        <li class="list-group-item"><label>{{ Form::checkbox('tipo_documento[]', $type_document->id)}}  {{$type_document->name}}</label></li>
+                                                        <li><p>
+                                                        <input type="checkbox" class="flat" name="tipo_documento[]" value="{{$type_document->id}}"> {{$type_document->name}} 
+                                                        </p></li>
+                                                        
                                                         @endforeach
+                                                        </ul>
                                                     </div>
 
                                                     <p></p>
@@ -115,7 +134,8 @@
                                                     <label>Número de Trámite *</label>
                                                     <input type="text" name ="number_process" class="form-control" placeholder="Núm. de Trámite" title="Ingrese el Número de Trámite de la Sucursal"  required><p></p>
                                                     <label>Número de Autorización *</label>
-                                                    <input type="text" name ="number_autho" class="form-control" placeholder="Núm. de Autorización" title="Ingrese el Número de Autorización de la Sucursal"  required><p></p>
+                                                    <input type="text" name ="number_autho" class="form-control" placeholder="Núm. de Autorización" title="Ingrese el Número de Autorización de la Sucursal"  required><p></p>                                              
+
                                                    <label>Fecha límite de Emisión *</label>
                                                     <div class="input-group">
                                                       <input class="form-control pull-right" name ="deadline" name="invoice_date" id="date" type="text" placeholder="Fecha Límite de Emisión"  title="Ingrese la Fecha Límite de Emisión" required>
@@ -159,8 +179,8 @@
 
 
                                                    <div class="checkbox">
-                                                      <label>
-                                                        {{ Form::checkbox('third_view', '1')}} Facturación por Terceros
+                                                      <label>                                                        
+                                                        <input  id="third_view" name="third_view" class="flat" type="checkbox" value="1"> Facturación por Terceros
                                                       </label>
                                                     </div>
 
@@ -171,7 +191,7 @@
 
                                                   <div class="checkbox">
                                                       <label>
-                                                        <input  id="isu" name="is_uniper" type="checkbox" value="1"> Unipersonal
+                                                        <input  id="isu" name="is_uniper"class="flat" type="checkbox" value="1"> Unipersonal
                                                       </label>
                                                   </div>
                                                   <div id="david">
@@ -195,12 +215,12 @@
                                   </div>{{-- fin del panel default--}}
                               </div>{{-- fin del col-md-9--}}
 
-
-                                 Nota: TODOS LOS CAMPOS SON REQUERIDOS
+                                <br>
+                                 
 
                    </div> {{--  fin del row --}}
 
-
+Nota: TODOS LOS CAMPOS SON REQUERIDOS
               </div>{{-- fin del panel body --}}
 
 
@@ -209,14 +229,68 @@
     </div> {{-- fin del col-md-8 --}}
 
      <script type="text/javascript">
-     console.log('Hola');
+$('input.flat').iCheck({
+               checkboxClass: 'icheckbox_flat-green',
+               radioClass: 'iradio_flat-green'
+           });
+
+
+// initialize the validator function
+        validator.message['date'] = 'not a real date';
+
+        // validate a field on "blur" event, a 'select' on 'change' event & a '.reuired' classed multifield on 'keyup':
+        $('form')
+            .on('blur', 'input[required], input.optional, select.required', validator.checkField)
+            .on('change', 'select.required', validator.checkField)
+            .on('keypress', 'input[required][pattern]', validator.keypress);
+
+        $('.multi.required')
+            .on('keyup blur', 'input', function () {
+                validator.checkField.apply($(this).siblings().last()[0]);
+            });
+
+        // bind the validation to the form submit event
+        //$('#send').click('submit');//.prop('disabled', true);
+
+        $('form').submit(function (e) {
+            e.preventDefault();
+            var submit = true;
+            // evaluate the form using generic validaing
+            if (!validator.checkAll($(this))) {
+                submit = false;
+            }
+
+            if (submit)
+                this.submit();
+            return false;
+        });
+
+        /* FOR DEMO ONLY */
+        $('#vfields').change(function () {
+            $('form').toggleClass('mode2');
+        }).prop('checked', false);
+
+        $('#alerts').change(function () {
+            validator.defaults.alerts = (this.checked) ? false : true;
+            if (this.checked)
+                $('form .alert').remove();
+        }).prop('checked', false);
+
             jQuery('#date').datepicker({
             dateFormat : 'yy-mm-dd'
         });
 
-        $('#date').on('changeDate', function(ev){
+$('#date').daterangepicker({
+                singleDatePicker: true,
+                calender_style: "picker_3"
+            }, function (start, end, label) {
+                console.log(start.toISOString(), end.toISOString(), label);
+            });
+
+
+        /*$('#date').on('changeDate', function(ev){
             $(this).datepicker('hide');
-        });
+        });*/
         $('#isu').on('change', function(e) {
           // From the other examples
           e.preventDefault();

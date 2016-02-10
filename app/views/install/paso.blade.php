@@ -47,13 +47,31 @@
               </div>
             @endif
         	<div class="row">
-			  <div class="col-md-4">
-			  	<ul class="nav nav-pills nav-stacked">
-			      <li role="presentation" ><a href="#">  <span class="badge">1</span> Casa Matriz</a></li>
-	              <li role="presentation" ><a href="#"><span class="badge">2</span> Tipo de Documentos</a></li>
-	              <li role="presentation" class="active"><a href="#"><span class="badge">3</span> Perfil de Administrador</a></li>
-			    </ul>
-			  </div>
+              <div id="wizard_verticle" class="form_wizard wizard_verticle">            
+                <ul class="list-unstyled wizard_steps">
+                    <li>
+                        <a href="#step-11" >
+                            <span class="step_no">1</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#step-22">
+                            <span class="step_no">2</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#step-33">
+                            <span class="step_no">3</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#step-44" class="disabled">
+                            <span class="step_no">4</span>
+                        </a>
+                    </li>
+                  </ul>
+              </div>
+
 			  
 			  <div class="col-md-8">{{--$usuario--}}
 			  	<div class="panel panel-default">
@@ -134,7 +152,7 @@
 			</div>
 
 		</div>
-		<div class="panel-footer"><b>Factura Virtual - IPX Server 2015</b></div>
+		<div class="panel-footer"><b>iSysmed - Crea Tu Mundo 2016</b></div>
 	</div>
   </div>
    

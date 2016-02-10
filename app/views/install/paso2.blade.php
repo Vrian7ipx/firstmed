@@ -1,7 +1,7 @@
 @extends('layout')
 
 
-@section('title') Asignación de tipos de documentos @stop
+@section('title') Asignación de Servicios @stop
 @section('head') 
  
 @stop
@@ -17,7 +17,7 @@
       <div class="panel panel-default">
        
         <div class="panel-heading"> 
-          <h3>Por favor completa la siguiente información necesaria para poder facturar</h3>
+          <h3>Complete la siguiente información básica para configurar su cuenta.</h3>
         </div>
 
         <div class="panel-body" > 
@@ -47,28 +47,60 @@
               </div>
             @endif
           <div class="row">
-            <div class="col-md-3">
-              <ul class="nav nav-pills nav-stacked">
-                  <li role="presentation" class="active"><a href="#"><span class="badge">1</span> Tipos de Documentos</a></li>
-                  <li role="presentation"><a href="#">  <span class="badge">2</span> Casa Matriz</a></li>
-                  <li role="presentation"><a href="#"><span class="badge">3</span> Perfil de Administrador</a></li>
-              </ul>
+            <div id="wizard_verticle" class="form_wizard wizard_verticle">            
+              <ul class="list-unstyled wizard_steps">
+                  <li>
+                      <a href="#step-11">
+                          <span class="step_no">1</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#step-22" class="disabled">
+                          <span class="step_no">2</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#step-33" class="disabled">
+                          <span class="step_no">3</span>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="#step-44" class="disabled">
+                          <span class="step_no">4</span>
+                      </a>
+                  </li>
+                </ul>
             </div>
+
 
             <div class="col-md-8">{{--panel formulario--}}
                 <div class="panel panel-default">
-                  <div class="panel-body" > 
-                    <legend>Tipos de documentos</legend>
-                    @foreach($tipos as $tipo)
-                     <div class="col-md-12">
-                      <div class="jumbotron">
+                  <div class="panel-body">
+                  <legend>Servicios</legend>
+                    <div class="x_content">
+                      <div class="">
+                          <ul class="to_do">
+                              <li>
+                                  <p>                                  
+                                      <input type="checkbox" class="flat"> Agenda de citas </p>
 
-                        <h2>&nbsp&nbsp&nbsp{{$tipo->name}}</h2>
-                        <p>{{$tipo->description}}</p>
-                        <p>&nbsp&nbsp&nbsp&nbsp{{ Form::checkbox('documentos[]', $tipo->id)}}</p>
+                              </li>
+                              <li>
+                                  <p>
+                                      <input type="checkbox" class="flat"> Facturación y Recetas</p>
+                              </li>
+                              <li>
+                                  <p>
+                                      <input type="checkbox" class="flat"> Pagos y Cobros</p>
+                              </li>
+                              <li>
+                                  <p>
+                                      <input type="checkbox" class="flat"> otro</p>
+                              </li>                              
+                          </ul>
                       </div>
-                     </div>
-                    @endforeach
+                  </div>
+
                     <legend>Logo</legend>
                     {{-- <img id="logo" src="#" alt="imagen" class="img-rounded"> --}}
                     <div class="col-md-1"></div>
@@ -96,13 +128,20 @@
 
 
          </div>
-          <div class="panel-footer"><b>Factura Virtual - IPX Server 2015</b></div>
+          <div class="panel-footer"><b>iSysmed - Crea Tu Mundo 2016</b></div>
         </div>
       </div>
      
     </div>    
-   
+  
+  
   <script type="text/javascript">
+  //$('.to_do').iCheck();
+$('input.flat').iCheck({
+               checkboxClass: 'icheckbox_flat-green',
+               radioClass: 'iradio_flat-green'
+           });
+
     function readURL(input) {
     if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -118,7 +157,25 @@
     $("#imgInp").change(function(){
         readURL(this);
     });
+   /* 
+        $(document).ready(function () {
+            // Smart Wizard   
+            $('#wizard').smartWizard();
 
+            function onFinishCallback() {
+                $('#wizard').smartWizard('showMessage', 'Finish Clicked');
+                //alert('Finish Clicked');
+            }
+        });
+
+        $(document).ready(function () {
+            // Smart Wizard 
+            $('#wizard_verticle').smartWizard({
+                transitionEffect: 'slide'
+            });
+
+        });*/
+    
   </script>
 
     

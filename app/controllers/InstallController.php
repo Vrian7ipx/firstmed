@@ -145,7 +145,7 @@ class InstallController extends BaseController {
 		return Redirect::to('/'); 
 	}
 	public function postpaso1()
-	{	
+	{			
 		if(Session::has('account_id'))
 		{
 			$base64 = null;
@@ -161,7 +161,7 @@ class InstallController extends BaseController {
 	                $td = TypeDocument::createNew();
 		            $td->setAccountId(Session::get('account_id'));
 		            $td->setLogo($src);
-		            $td->setMasterIds(Input::get('documentos'));
+		            $td->setMasterIds([1,2]);
 		            if($td->Guardar())
 					{	
 						//redireccionar con el mensaje a la siguiente vista 
