@@ -11,7 +11,7 @@
 {{Former::framework('TwitterBootstrap3')}}
 
 
-	<div class="box">
+	<div class="x_panel">
 	  <div class="box-header with-border">
 	    <h3 class="box-title">Datos del Servicio</h3>
 	    <div class="box-tools pull-right">

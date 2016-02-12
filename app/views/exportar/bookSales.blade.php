@@ -11,9 +11,7 @@
          @stop
 
 @section('content')
-
-{{Former::framework('TwitterBootstrap3')}}
-        <div class="box">
+        <div class="x_panel">
           <div class="box-header with-border">
             <h3 class="box-title">Generar libro de ventas</h3>
             <div class="box-tools pull-right">

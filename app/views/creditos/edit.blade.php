@@ -4,7 +4,7 @@
 
 {{Former::framework('TwitterBootstrap3')}}
 
-<div class="panel panel-default">
+<div class="x_panel panel-default">
 	 <div class="box-header with-border">
 	    <h3 class="box-title">Datos del Crédito</h3>
 	    <div class="box-tools pull-right">

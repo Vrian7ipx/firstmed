@@ -10,7 +10,7 @@
 
  {{ Form::open(array('url' => 'editarcuenta', 'method' => 'post' ,'files'=>true ))}}
 
-<div class="box box-info">
+<div class="x_panel box-info">
   <div class="box-header with-border">
     <h3 class="box-title">{{$cuenta->name}}</h3>
     <div class="box-tools pull-right">

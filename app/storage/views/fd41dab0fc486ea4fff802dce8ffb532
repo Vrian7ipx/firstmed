@@ -91,87 +91,96 @@ body {
 
 <?php $__env->startSection('body'); ?>
 
-<body style="background:#F7F7F7;">
-    <?php echo Form::open(array('url' => '/login')); ?>
+<div class="">
+    <a class="hiddenanchor" id="toregister"></a>
+    <a class="hiddenanchor" id="tologin"></a>
 
-    <div class="">
-        <a class="hiddenanchor" id="toregister"></a>
-        <a class="hiddenanchor" id="tologin"></a>
+    <div id="wrapper">
+        <div id="login" class="animate form">
+            <section class="login_content">
+                <form action="<?php echo URL::to('login'); ?>" method="POST">
+                    <h1>iSysmed</h1>
+                    <div>
+                        <input type="text" name="username" class="form-control" placeholder="Nombre de Usuario" <?php if(Session::has('b_user')){ echo "value='".Session::get('b_user')."'";}?> required />
+                    </div>
+                    <div>
+                        <input type="password" name="password" class="form-control" placeholder="Contraseña" <?php if(Session::has('b_pass')){ echo "value='".Session::get('b_pass')."'";}?> required />
+                    </div>
+                    <div>
+                        <!-- <a class="btn btn-default submit" type="submit" value="Submit" >Ingresar</a> -->
+                        <input class="btn btn-default submit" type="submit" value="Ingresar">
+                        <a class="reset_pass" href="#">Olvidaste tu contraseña?</a>                        
+                    </div>
+                    <div class="clearfix"></div>
+                                                    <p>
+                    <?php if(Session::has('error_login')): ?>
+                    <!-- <span class="alert alert-dange"><?php echo Session::get('error_login'); ?></span> -->
 
-        <div id="wrapper">
-            <div id="login" class="animate form">
-                <section class="login_content">
-                    <form action="<?php echo URL::to('login'); ?>" >
-                        <h1>iSysmed</h1>
-                        <div>
-                            <input type="text" name="username" class="form-control" placeholder="Nombre de Usuario" <?php if(Session::has('b_user')){ echo "value='".Session::get('b_user')."'";}?> required />
-                        </div>
-                        <div>
-                            <input type="password" name="password" class="form-control" placeholder="Contraseña" <?php if(Session::has('b_pass')){ echo "value='".Session::get('b_pass')."'";}?> required />
-                        </div>
-                        <div>
-                            <a class="btn btn-default submit" type="submit" >Ingresar</a>
-                            <a class="reset_pass" href="#">Lost your password?</a>
-                        </div>
+                        <div role="alert" class="alert alert-danger alert-dismissible fade in">
+                           <button aria-label="Close" data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span>
+                               </button>
+                                    <strong>Error!</strong> Los datos ingresados no son correctos.
+                                </div>
+
+                    <?php endif; ?>
+                </p>
+                    <div class="separator">
+
+                        <p class="change_link">Eres nuevo?
+                            <a href="#toregister" class="to_register"> Regístrate</a>
+                        </p>
                         <div class="clearfix"></div>
-                                        
-                        <div class="separator">
+                        <br />
+                        <div>
+                            <h1><i class="fa fa-paw" style="font-size: 26px;"></i> Crea Tu Mundo!</h1>
 
-                            <p class="change_link">Eres nuevo?
-                                <a href="#toregister" class="to_register"> Regístrate</a>
-                            </p>
-                            <div class="clearfix"></div>
-                            <br />
-                            <div>
-                                <h1><i class="fa fa-paw" style="font-size: 26px;"></i> Gentelella Alela!</h1>
+                            <p>©2016 Todos los derechos resevados. www.creatumundo.com.bo</p>
+                        </div>
+                    </div>
+                </form>
+                <!-- form -->
+            </section>
+            <!-- content -->
+        </div>
+        <div id="register" class="animate form">
+            <section class="login_content">
+                <form>
+                    <h1>Crear Cuenta</h1>
+                    <div>
+                        <input type="text" class="form-control" placeholder="Username" required="" />
+                    </div>
+                    <div>
+                        <input type="email" class="form-control" placeholder="Email" required="" />
+                    </div>
+                    <div>
+                        <input type="password" class="form-control" placeholder="Password" required="" />
+                    </div>
+                    <div>
+                        <a class="btn btn-default submit" href="index.html">Enviar</a>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="separator">
 
-                                <p>©2016 Todos los derechos resevados. www.creatumundo.com.bo</p>
-                            </div>
-                        </div>
-                    </form>
-                    <!-- form -->
-                </section>
-                <!-- content -->
-            </div>
-            <div id="register" class="animate form">
-                <section class="login_content">
-                    <form>
-                        <h1>Create Account</h1>
-                        <div>
-                            <input type="text" class="form-control" placeholder="Username" required="" />
-                        </div>
-                        <div>
-                            <input type="email" class="form-control" placeholder="Email" required="" />
-                        </div>
-                        <div>
-                            <input type="password" class="form-control" placeholder="Password" required="" />
-                        </div>
-                        <div>
-                            <a class="btn btn-default submit" href="index.html">Submit</a>
-                        </div>
+                        <p class="change_link">Ya eres un miembro?
+                            <a href="#tologin" class="to_register"> Ingresar </a>
+                        </p>
                         <div class="clearfix"></div>
-                        <div class="separator">
+                        <br />
+                        <div>
+                            <h1><i class="fa fa-paw" style="font-size: 26px;"></i> Crea Tu Mundo</h1>
 
-                            <p class="change_link">Already a member ?
-                                <a href="#tologin" class="to_register"> Log in </a>
-                            </p>
-                            <div class="clearfix"></div>
-                            <br />
-                            <div>
-                                <h1><i class="fa fa-paw" style="font-size: 26px;"></i> Gentelella Alela!</h1>
-
-                                <p>©2015 All Rights Reserved. Gentelella Alela! is a Bootstrap 3 template. Privacy and Terms</p>
-                            </div>
+                            <p>©2016 Todos los derechos resevados. www.creatumundo.com.bo</p>
                         </div>
-                    </form>
-                    <!-- form -->
-                </section>
-                <!-- content -->
-            </div>
+                    </div>
+                </form>
+                <!-- form -->
+            </section>
+            <!-- content -->
         </div>
     </div>
+</div>
 
-</body>
+
 
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('layout', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

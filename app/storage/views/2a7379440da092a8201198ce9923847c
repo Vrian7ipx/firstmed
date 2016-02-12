@@ -3,8 +3,10 @@
 
     <script src="<?php echo asset('vendor/AdminLTE2/plugins/select2/select2.full.js'); ?>" type="text/javascript"></script>
     <script src="<?php echo asset('vendor/AdminLTE2/plugins/select2/i18n/es.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo asset('vendor/gentellela/js/autocomplete/jquery.autocomplete.js'); ?>" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo asset('vendor/AdminLTE2/plugins/select2/select2.css'); ?>">
     <script src="<?php echo asset('customs/bootstrap-switch.js'); ?>" type="text/javascript"></script>
+    <script src="<?php echo asset('vendor/AdminLTE2/plugins/jQueryUI/jquery-ui.js'); ?>" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="<?php echo asset('customs/bootstrap-switch.css'); ?>">
       <style type="text/css">
       .centertext{
@@ -46,7 +48,7 @@ li.ui-menu-item:hover{background-color:#ccc}
             <li class="active"> Nuevo </li> <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
-<div class="box box-primary">
+<div class="x_panel box-primary">
   <div class="box-header">
     <h3 class="box-title">FACTURA</h3>
     <?php echo Utils::aviso_renovar(); ?>

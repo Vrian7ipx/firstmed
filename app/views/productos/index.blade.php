@@ -8,7 +8,7 @@
 
 @section('content')
 
-<div class="box">
+<div class="x_panel">
   <div class="box-header with-border">
     <h3 class="box-title">
       <a href="{{ url('productos/create') }}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-compressed" aria-hidden="true"></span> Nuevo Producto</a>

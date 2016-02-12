@@ -8,7 +8,7 @@
 
 @section('content')
 
-<div class="box">
+<div class="x_panel">
   <div class="box-header with-border">
     <h3 class="box-title"><a href="{{ url('unidades/create') }}" class="btn btn-success" role="button">Nueva Unidad &nbsp<span class="glyphicon glyphicon-plus-sign"></span></a></h3>
     <div class="box-tools pull-right">

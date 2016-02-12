@@ -9,7 +9,7 @@
 @section('content')
 
 
-<div class="box box-info">
+<div class="x_panel box-info">
   <div class="box-header with-border">
     <h3 class="box-title"> <label></label>Detalle del {{$product->is_product?'Producto':'Servicio'}} :  {{ $product->notes }} </label></h3>
     <div class="box-tools pull-right">

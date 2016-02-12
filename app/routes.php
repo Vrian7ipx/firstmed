@@ -26,7 +26,7 @@
 
 
 
-Route::group(array('domain' => '{account}.isysmed.med'), function()
+Route::group(array('domain' => '{account}.facturacion.ipx'), function()
 {
 // Route::group(array('domain' => '{account}.localhost'), function()
 // {
@@ -134,6 +134,7 @@ Route::group(array('before' => 'auth'), function()
 
   Route::resource('usuarios', 'UserController');
   Route::resource('clientes', 'ClientController');
+  Route::get('citas','AccountController@exampleCita');
 
   Route::post('clientesDown', 'ClientController@indexDown');
   Route::get('clientesDown', 'ClientController@indexDown');
@@ -163,7 +164,10 @@ Route::group(array('before' => 'auth'), function()
   // Route::get('verfactura/{id}','invoiceController@verFactura');
 
   Route::post('excel','invoiceController@excel');
+  Route::post('excel2','invoiceController@excel2');
+
   Route::get('importar','invoiceController@importar');
+  Route::get('importar2','invoiceController@importar2');
   Route::get('anular/{publicId}','invoiceController@anular');
   Route::get('copia/{publicId}','invoiceController@copia');
 

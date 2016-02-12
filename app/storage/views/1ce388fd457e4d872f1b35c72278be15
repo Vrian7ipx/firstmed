@@ -3,7 +3,7 @@
 <?php $__env->startSection('nivel'); ?> <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li> <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
-		<div class="row">
+		<div class="x_panel">
           <?php if(Auth::user()->is_admin): ?>
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">

@@ -23,7 +23,7 @@
       )) }}
 
 
-      	<div class="box box-success	">
+      	<div class="x_panel box-success	">
       		<div class="box-header with-border">
 			    <h3 class="box-title">Datos de Usuario</h3>
 			</div><!-- /.box-header -->

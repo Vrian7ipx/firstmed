@@ -15,7 +15,7 @@
 
 
   <p></p>
-  <div class="panel panel-default">
+  <div class="x_panel panel-default">
   
 	  <div class="panel-body">
 

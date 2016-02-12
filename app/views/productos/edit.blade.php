@@ -10,7 +10,7 @@
 
 {{Former::framework('TwitterBootstrap3')}}
 
-<div class="box box-primary" >
+<div class="x_panel box-primary" >
   <div class="box-header with-border">
     <h3 class="box-title">Datos del Producto</h3>
     <div class="box-tools pull-right">

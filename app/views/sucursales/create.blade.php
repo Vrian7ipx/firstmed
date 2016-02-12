@@ -19,7 +19,7 @@
 
 
         <!-- Apply any bg-* class to to the info-box to color it -->
-      <div class="box box-success">
+      <div class="x_panel box-success">
         <div class="box-header with-border">
           <h3 class="box-title">Datos Sucursal</h3>
 

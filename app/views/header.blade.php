@@ -75,7 +75,7 @@
         <div class="col-md-3 left_col">
         <div class="left_col scroll-view">
           <div class="navbar nav_title" style="border: 0;">
-            <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>iSysmed</span></a>
+            <a href="index.html" class="site_title"><i class="fa fa-stethoscope"></i> <span>iSysmed</span></a>
           </div>
           <div class="clearfix"></div>
 
@@ -95,111 +95,73 @@
               <div class="menu_section">
                 <h3>Menu</h3>
                 <ul class="nav side-menu">
-                    <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                    <li>
+                      <a href="{{URL::to('inicio')}}">
+                        <i class="fa fa-home"></i> Resumen
+                      </a>      
+                    </li>
+                    <li>
+                      <a href="{{URL::to('clientes')}}">
+                        <i class="fa fa-users"></i> Clientes
+                      </a>      
+                    </li>
+                    <li><a><i class="fa fa-medkit"></i> Actividad <span class="fa fa-chevron-down"></span></a>
                         <ul class="nav child_menu" style="display: none">
-                            <li><a href="index.html">Dashboard</a>
+                            <li><a href="{{URL::to('servicios')}}">Servicios</a>
                             </li>
-                            <li><a href="index2.html">Dashboard2</a>
+                            <li><a href="{{URL::to('categorias')}}">Categorías</a>
                             </li>
-                            <li><a href="index3.html">Dashboard3</a>
-                            </li>
+                            <!-- <li><a href="form_validation.html">Form Validation</a>
+                            </li> -->
+                            
                         </ul>
                     </li>
-                    <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu" style="display: none">
-                            <li><a href="form.html">General Form</a>
-                            </li>
-                            <li><a href="form_advanced.html">Advanced Components</a>
-                            </li>
-                            <li><a href="form_validation.html">Form Validation</a>
-                            </li>
-                            <li><a href="form_wizards.html">Form Wizard</a>
-                            </li>
-                            <li><a href="form_upload.html">Form Upload</a>
-                            </li>
-                            <li><a href="form_buttons.html">Form Buttons</a>
-                            </li>
-                        </ul>
+                    <li>
+                      <a href="{{URL::to('citas')}}">
+                        <i class="fa fa-calendar"></i> Citas
+                      </a>      
                     </li>
-                    <li><a><i class="fa fa-desktop"></i> UI Elements <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu" style="display: none">
-                            <li><a href="general_elements.html">General Elements</a>
-                            </li>
-                            <li><a href="media_gallery.html">Media Gallery</a>
-                            </li>
-                            <li><a href="typography.html">Typography</a>
-                            </li>
-                            <li><a href="icons.html">Icons</a>
-                            </li>
-                            <li><a href="glyphicons.html">Glyphicons</a>
-                            </li>
-                            <li><a href="widgets.html">Widgets</a>
-                            </li>
-                            <li><a href="invoice.html">Invoice</a>
-                            </li>
-                            <li><a href="inbox.html">Inbox</a>
-                            </li>
-                            <li><a href="calender.html">Calender</a>
-                            </li>
-                        </ul>
+                    <li>
+                      <a href="{{URL::to('factura')}}">
+                        <i class="fa fa-files-o"></i> Facturas
+                      </a>      
                     </li>
-                    <li><a><i class="fa fa-table"></i> Tables <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu" style="display: none">
-                            <li><a href="tables.html">Tables</a>
-                            </li>
-                            <li><a href="tables_dynamic.html">Table Dynamic</a>
-                            </li>
-                        </ul>
+                    <li>
+                      <a href="{{URL::to('indexNota')}}">
+                        <i class="fa fa-file-text-o"></i> Recetas
+                      </a>      
                     </li>
-                    <li><a><i class="fa fa-bar-chart-o"></i> Data Presentation <span class="fa fa-chevron-down"></span></a>
-                        <ul class="nav child_menu" style="display: none">
-                            <li><a href="chartjs.html">Chart JS</a>
-                            </li>
-                            <li><a href="chartjs2.html">Chart JS2</a>
-                            </li>
-                            <li><a href="morisjs.html">Moris JS</a>
-                            </li>
-                            <li><a href="echarts.html">ECharts </a>
-                            </li>
-                            <li><a href="other_charts.html">Other Charts </a>
-                            </li>
-                        </ul>
-                    </li>
+                    <li>
+                      <a href="{{URL::to('pagos')}}">
+                        <i class="fa fa-money"></i> Pagos y Cobros
+                      </a>      
+                    </li>                    
                 </ul>
               </div>
               <div class="menu_section">
-                  <h3>Live On</h3>
+                  <h3>Configuración</h3>
                   <ul class="nav side-menu">
-                      <li><a><i class="fa fa-bug"></i> Additional Pages <span class="fa fa-chevron-down"></span></a>
-                          <ul class="nav child_menu" style="display: none">
-                              <li><a href="e_commerce.html">E-commerce</a>
-                              </li>
-                              <li><a href="projects.html">Projects</a>
-                              </li>
-                              <li><a href="project_detail.html">Project Detail</a>
-                              </li>
-                              <li><a href="contacts.html">Contacts</a>
-                              </li>
-                              <li><a href="profile.html">Profile</a>
-                              </li>
-                          </ul>
-                      </li>
-                      <li><a><i class="fa fa-windows"></i> Extras <span class="fa fa-chevron-down"></span></a>
-                          <ul class="nav child_menu" style="display: none">
-                              <li><a href="page_404.html">404 Error</a>
-                              </li>
-                              <li><a href="page_500.html">500 Error</a>
-                              </li>
-                              <li><a href="plain_page.html">Plain Page</a>
-                              </li>
-                              <li><a href="login.html">Login Page</a>
-                              </li>
-                              <li><a href="pricing_tables.html">Pricing Tables</a>
-                              </li>
-
-                          </ul>
-                      </li>
-                      <li><a><i class="fa fa-laptop"></i> Landing Page <span class="label label-success pull-right">Coming Soon</span></a>
+                    <li>
+                      <a href="{{URL::to('usuarios')}}">
+                        <i class="fa fa-user-md"></i> Usuarios
+                      </a>      
+                    </li>
+                    <li>
+                      <a href="{{URL::to('sucursales')}}">
+                        <i class="fa fa-hospital-o"></i> Dosificaciones
+                      </a>      
+                    </li>
+                    <li>
+                      <a href="{{URL::to('editarcuenta')}}">
+                        <i class="fa fa-h-square"></i> Cuenta
+                      </a>      
+                    </li>    
+                    <li>
+                      <a href="{{URL::to('libroVentas')}}">
+                        <i class="fa fa-file-text"></i> Libro de Ventas
+                      </a>      
+                    </li>
+                      <li><a><i class="fa fa-stethoscope"></i> Diagnósticos<span class="label label-success pull-right">Proximamente</span></a>
                       </li>
                   </ul>
               </div>
@@ -334,23 +296,26 @@
             <!-- page content -->
             <div class="right_col" role="main">
             <br>
-              <div>
-                <div class="row top_tiles">
-                  <div class="content-header">
+              <div>                                 
+                  <div class="row">
+                  <div class="col-md-12">
+                  <div class="x_panel">
+                    <div class="x_title">
+                      <div class="content-header">
                   <h1>
                     @yield('encabezado')
                     <small>@yield('encabezado_descripcion')</small>
                   </h1> 
                   </div>
-                  <div class="row">
-                  <div class="col-md-12">
-                  <div class="x_panel">
+                    </div>
                   <!--EN ESTA PARTE COLOCAR LOS MENSAJES DE ALERTA-->
+                  <div class="x_content">
                     @yield('content')
+                  </div>
                     </div>
                     </div>
                     </div>
-                </div>
+            
               </div>
             </div>
             <!-- footer content -->

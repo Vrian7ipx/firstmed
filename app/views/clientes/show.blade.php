@@ -18,7 +18,7 @@
   });
 ?>
 
-<div class="box box-info">
+<div class="x_panel box-info">
   <div class="box-header with-border">
     <h3  class="box-title"><strong>  Nombre del Cliente : </strong>{{ $client->name }} </h3>
     <div class="box-tools pull-right">

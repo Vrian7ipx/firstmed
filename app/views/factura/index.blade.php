@@ -7,7 +7,7 @@
 
 @section('content')
 
-<div class="panel panel-default">
+<div class="x_panel panel-default">
   <div class="box-header with-border">
      <h3 class="box-title"><a href="{{ url(Session::get('invoice_link')) }}" class="btn btn-success" role="button">Nueva Factura&nbsp<span class="glyphicon glyphicon-plus-sign"></span></a></h3>
     <div class="box-tools pull-right">

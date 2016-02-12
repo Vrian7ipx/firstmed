@@ -9,7 +9,7 @@
 @section('content')
 
 
-<div class="box">
+<div class="x_panel">
   <div class="box-header with-border">
     <h3 class="box-title"><a href="{{ url('usuarios/create') }}" class="btn btn-success" role="button">Crear Usuarios &nbsp<span class="glyphicon glyphicon-plus-sign"></span></a></h3>
   </div><!-- /.box-header -->

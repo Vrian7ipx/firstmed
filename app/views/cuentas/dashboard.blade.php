@@ -4,7 +4,7 @@
 @section('nivel') <li><a href="#"><i class="fa fa-dashboard"></i> Inicio</a></li> @stop
 
 @section('content')
-		<div class="row">
+		<div class="x_panel">
           @if(Auth::user()->is_admin)
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">

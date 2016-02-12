@@ -4,8 +4,10 @@
 
     <script src="{{ asset('vendor/AdminLTE2/plugins/select2/select2.full.js')}}" type="text/javascript"></script>
     <script src="{{asset('vendor/AdminLTE2/plugins/select2/i18n/es.js')}}" type="text/javascript"></script>
+    <script src="{{asset('vendor/gentellela/js/autocomplete/jquery.autocomplete.js')}}" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('vendor/AdminLTE2/plugins/select2/select2.css')}}">
     <script src="{{ asset('customs/bootstrap-switch.js')}}" type="text/javascript"></script>
+    <script src="{{ asset('vendor/AdminLTE2/plugins/jQueryUI/jquery-ui.js')}}" type="text/javascript"></script>
     <link rel="stylesheet" type="text/css" href="{{ asset('customs/bootstrap-switch.css')}}">
       <style type="text/css">
       .centertext{
@@ -47,7 +49,7 @@ li.ui-menu-item:hover{background-color:#ccc}
             <li class="active"> Nuevo </li> @stop
 
 @section('content')
-<div class="box box-primary">
+<div class="x_panel box-primary">
   <div class="box-header">
     <h3 class="box-title">FACTURA</h3>
     {{Utils::aviso_renovar()}}

@@ -9,7 +9,7 @@
 @section('content')
 
 {{Former::framework('TwitterBootstrap3')}}
-	<div class="box box-success">
+	<div class="x_panel box-success">
 	  <div class="box-header with-border">
 	    <h3 class="box-title">Datos del Producto</h3>
 	    <div class="box-tools pull-right">

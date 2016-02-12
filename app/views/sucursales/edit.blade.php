@@ -20,7 +20,7 @@
   
     )) }}
 
-      <div class="box box-primary">
+      <div class="x_panel box-primary">
         <div class="box-header with-border">
           <h3 class="box-title"> Datos de la Sucursal</h3>
         </div><!-- /.box-header -->

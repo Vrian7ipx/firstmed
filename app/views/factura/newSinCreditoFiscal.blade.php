@@ -47,7 +47,7 @@ li.ui-menu-item:hover{background-color:#ccc}
             <li class="active"> Nuevo </li> @stop
 
 @section('content')
-<div class="box box-primary">
+<div class="x_panel box-primary">
   <div class="box-header">
     <h3 class="box-title">FACTURA</h3>
     {{Utils::aviso_renovar()}} 

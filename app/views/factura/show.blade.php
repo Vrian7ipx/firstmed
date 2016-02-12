@@ -24,7 +24,7 @@
             <li class="active">Ver</li> @stop
 
 @section('content')
-<div class="box box-info">
+<div class="x_panel box-info">
    <div class="box-header with-border">
     <h3 class="box-title">Factura: {{ $invoice->invoice_number }}</h3>
     <div class="box-tools pull-right">

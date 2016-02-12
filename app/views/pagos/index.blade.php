@@ -7,7 +7,7 @@
 
 @section('content')
 
-<div class="panel panel-default">
+<div class="x_panel panel-default">
   <div class="box-header with-border">
     <h3 class="box-title"><a href="{{URL::to('pagos/create')}}" class="btn btn-success" role="button">Nuevo Pago &nbsp<span class="glyphicon glyphicon-plus-sign"></span></a></h3>
 

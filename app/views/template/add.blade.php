@@ -9,7 +9,7 @@
 @section('content')
 
 
-<div class="box box-info">
+<div class="x_panel box-info">
   <div class="box-header with-border">
 
     <div class="box-tools pull-right">

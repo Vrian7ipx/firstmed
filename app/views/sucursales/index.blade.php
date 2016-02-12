@@ -8,7 +8,7 @@
 @section('content')
 
 
-<div class="box">
+<div class="x_panel">
    <div class="box-header with-border">
     <h3 class="box-title">
       <a href="{{ url('sucursales/create') }}" class="btn btn-success" role="button">Crear dosificaci&oacute;n &nbsp<span class="glyphicon glyphicon-plus-sign"></span></a></h3>

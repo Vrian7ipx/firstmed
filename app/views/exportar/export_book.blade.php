@@ -4,7 +4,7 @@
 
 {{Former::framework('TwitterBootstrap3')}}
 
-<div class="panel panel-default">
+<div class="x_panel panel-default">
     <div class="panel-heading">
         <div class="row">
           <div class="col-md-6">
