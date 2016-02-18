@@ -2110,6 +2110,7 @@ echo "facturas agregadas<br><br><br><br><br>";
             $bbr['products']=$products;
             array_push($factura, $bbr);
         }
+
         $returnable = $this->validateShatterExcel($factura);
         if($returnable!=""){
             Session::flash('error',$returnable);
@@ -2173,16 +2174,16 @@ echo "facturas agregadas<br><br><br><br><br>";
           //$nit = $dato[0];
           $bbr['name'] = $dato[0];
           $bbr['nit'] = $dato[1];
+          if($bbr['nit']="123")
+          	$bbr['nit']=0;
           $bbr['code'] = $dato[2];
           $bbr['razon'] = $dato[3];
           $bbr['total'] = $dato[4];
           $bbr['qty'] = $dato[5];
           array_push($factura, $bbr);
 
-        }
-/*        print_r($bbr);
-        return 0;
-
+        }                
+/*
         $returnable = $this->validateShatterExcel($factura);
         if($returnable!=""){
             Session::flash('error',$returnable);
@@ -2408,7 +2409,7 @@ echo "facturas agregadas<br><br><br><br><br>";
                     $invoiceItem->setProductKey($product->product_key);
                     $invoiceItem->setNotes($product->notes);
                     $invoiceItem->setCost($factura['total']);
-                    $invoiceItem->setQty($factura['qty']);
+                    $invoiceItem->setQty($factura['qty'] );
                     $invoiceItem->save();
             }
           $this->sendInvoiceByMailLocal($client->name,$client->business_name,$invoice->id,$invoice->invoice_date,$client->nit);
