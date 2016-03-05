@@ -27,6 +27,9 @@
 
    <?php echo HTML::style('vendor/gentellela/css/floatexamples.css', array('media' => 'screen')); ?>
 
+   <?php echo HTML::style('vendor/gentellela/css/datatables/tools/css/dataTables.tableTools.css'); ?>
+
+   
 
    <?php echo HTML::script('vendor/gentellela/js/jquery.min.js'); ?>
 
@@ -48,6 +51,9 @@
 
    <?php echo HTML::script('vendor/gentellela/js/custom.js'); ?>
 
+   <?php echo HTML::script('vendor/gentellela/js/datatables/js/jquery.dataTables.js'); ?>
+
+   <?php echo HTML::script('vendor/gentellela/js/datatables/tools/js/dataTables.tableTools.js'); ?>   
    <?php /* HTML::script('vendor/gentellela/js/flot/jqeury.flot.js') */ ?>
 
 

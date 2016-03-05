@@ -20,6 +20,8 @@
    {{ HTML::style('vendor/gentellela/css/maps/jquery-jvectormap-2.0.1.css', array('media' => 'screen')) }}
    {{ HTML::style('vendor/gentellela/css/icheck/flat/green.css', array('media' => 'screen')) }}
    {{ HTML::style('vendor/gentellela/css/floatexamples.css', array('media' => 'screen')) }}
+   {{ HTML::style('vendor/gentellela/css/datatables/tools/css/dataTables.tableTools.css') }}
+   
 
    {{ HTML::script('vendor/gentellela/js/jquery.min.js') }}
    {{ HTML::script('vendor/gentellela/js/bootstrap.min.js') }}
@@ -31,6 +33,8 @@
    {{ HTML::script('vendor/gentellela/js/datepicker/daterangepicker.js') }}
    {{ HTML::script('vendor/gentellela/js/sparkline/jquery.sparkline.min.js') }}
    {{ HTML::script('vendor/gentellela/js/custom.js') }}
+   {{ HTML::script('vendor/gentellela/js/datatables/js/jquery.dataTables.js') }}
+   {{ HTML::script('vendor/gentellela/js/datatables/tools/js/dataTables.tableTools.js') }}   
    {{-- HTML::script('vendor/gentellela/js/flot/jqeury.flot.js') --}}
 
 

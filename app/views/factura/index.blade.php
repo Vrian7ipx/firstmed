@@ -13,64 +13,36 @@
     <div class="box-tools pull-right">
     </div><!-- /.box-tools -->
   </div><!-- /.box-header -->
+  <div class="x_content">
+    <table id="example" class="table table-striped responsive-utilities jambo_table">
+        <thead>
+            <tr class="headings">                              
+                <th> Nº </th>
+                <th>Razón </th>
+                <th>Fecha </th>
+                <th>Total </th>
+                <th>Usuario </th>                                
+                <th class=" no-link last"><span class="nobr">Acciones</span>
+                </th>
+            </tr>
+        </thead>
 
-
-  <div class="table-responsive">
-		<table id="datatable" class="table table-striped table-hover" cellspacing="0" cellpadding="0" width="100%" style="margin-left:24px;">
-          <thead>
-              <tr>
-                  <!--<td><input class="selectAll" type="checkbox"></td>-->
-                  <td>Nº</td>
-                  <td>Raz&oacute;n</td>
-                  <td>Fecha</td>
-                  <td>Total</td>
-
-                   <td>Sucursal</td>
-
-                  <td>Estado</td>
-                  <td style = "display:none">Acción</td>
-
+        <tbody>
+            <?php $even=true; ?>
+            @foreach($invoices as $invoice)              
+            <tr class="pointer">
+              <td class="a-right a-right">{{$invoice->invoice_number}} </td>
+              <td class="a-center ">{{$invoice->client_name}} </td>
+              <td class="a-center ">{{$invoice->invoice_date}} </td>
+              <td class="a-right a-right">{{$invoice->importe_neto}} </td>
+              <td class="a-center ">{{$invoice->user_id}} </td>
+              <td class="last"><a href="#">View</a></td>
               </tr>
-          </thead>
-			<thead>
-              <tr>
-                  <!--<td><input class="selectAll" type="checkbox"></td>-->
-                  <th>Nº</th>
-                  <th>Raz&oacute;n</th>
-                  <th>Fecha</th>
-                  <th>Total</th>
+            @endforeach 
+        </tbody>
 
-                   <th>Sucursal</th>
-
-                  <th>Estado</th>
-                  <th style = "display:block">&nbsp;Acción</th>
-
-              </tr>
-          </thead>
-          <!-- <tbody>
-
-          @foreach($invoices as $invoice)
-              <tr class="active">
-
-                  <td>{{ $invoice->invoice_number}}</td>
-                  <td ><a href="{{URL::to('clientes/'.Client::find($invoice->client_id)->public_id)}}">{{ $invoice->getClientName() }}</a></td>
-                  <td>{{ $invoice->getInvoiceDate() }}</td>
-                  <td>{{ $invoice->getImporteTotal() }}</td>
-
-                  <td>{{ $invoice->getBranchName()}}</td>
-
-                  <td>{{ $invoice->getInvoiceStatus() }}</td>
-
-                  <td>
-        		<a id="{{$invoice->invoice_number}}" class="btn btn-primary btn-xs jae" data-task="view" href="{{ URL::to("factura/".$invoice->public_id) }}"  style="text-decoration:none;color:white;"><i class="glyphicon glyphicon-eye-open" title="hola" ></i></a>
-  		    	<a class="btn btn-warning btn-xs" data-task="view" data-toggle="tooltip" data-original-title="Default tooltip" href="{{ URL::to("copia/".$invoice->public_id) }}"  style="text-decoration:none;color:white;"><i class="glyphicon glyphicon-duplicate"></i></a>
-                  </td>
-              </tr>
-          @endforeach
-          </tbody> -->
-        </table>
-
-    </div>
+    </table>
+  </div>
 </div>
 
 <div class="modal fade" id="formConfirm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -98,68 +70,6 @@
 
   $(document).ready(function() {
 
-$("#jae2").change(function (){
-    console.log("i founf a place so safe not a single tear");
-
-    });
-
-    $('#datatable thead td').each( function () {
-      var title = $('#datatable thead td').eq( $(this).index() ).text();
-
-		//alert(title);
-		var tamaño = 10;
-		if (title == 'Nº') {
-		  tamaño = 3;
-		  //$(this).html('<div class="left-inner-addon form-group has-feedback has-feedback-left"><input type="text" size="2"class="form-control" placeholder="'+title+'" /><i class="glyphicon glyphicon-search form-control-feedback"></i></div>');
-		  $(this).html('<div class="form-group  has-feedback"><input size="'+tamaño+'" placeholder="'+title+'" type="text" class="form-control" id="place"><span style="text-decoration:none;color:#D3D3D3;" class="glyphicon glyphicon-search form-control-feedback "></span></div>');
-
-		}
-		else{
-		tamaño = 5;
-        $(this).html('<div class="form-group has-feedback"><input size="'+tamaño+'" placeholder="'+title+'" type="text" class="form-control" id="place"><span style="text-decoration:none;color:#D3D3D3;" class="glyphicon glyphicon-search form-control-feedback"></span></div>' );
-		}
-    } );
-
-	$('#datatable').DataTable(
-      {
-        ajax: {
-      url: '{{ URL::to('getInvoices') }}',
-      dataSrc: 'data'
-  },
-  columns: [
-        { data: 'invoice_number' },
-        { data: 'razon' },
-        { data: 'invoice_date' },
-        { data: 'importe_total' },
-        { data: 'branch_name' },
-        { data: 'estado' },
-        { data: 'accion' }
-        //{ data: 'category_name' },
-        //{ data: 'accion' }
-      ],
-      "deferRender": true,
-	  "lengthMenu": [[30, 50, 100, -1], [30, 50, 100, "Todo"]],
-    "order": [[ 2, "desc" ]],
-      "language": {
-		"zeroRecords": "&nbsp;&nbsp;&nbsp;No se encontro el registro",
-        "sLengthMenu":    "&nbsp;&nbsp;&nbsp;Mostrar _MENU_ registros",
-        "sZeroRecords":   "&nbsp;&nbsp;&nbsp;No se encontraron resultados",
-        "sEmptyTable":    "&nbsp;&nbsp;&nbsp;Ningún dato disponible en esta tabla",
-        "info": "&nbsp;&nbsp;&nbsp;Mostrando página _PAGE_ de _PAGES_",
-        "infoEmpty": "&nbsp;&nbsp;&nbsp;No hay registros disponibles",
-        "sInfoFiltered":  "(filtrado de un total de _MAX_ registros)",
-        "sUrl":           "",
-        "sInfoThousands":  ",",
-        "sLoadingRecords": "Cargando...",
-        "oPaginate": {
-            "sFirst":    "Primero",
-            "sLast":    "Último",
-            "sNext":    "Siguiente",
-            "sPrevious": "Anterior"
-        },
-    }
-   });
-
 	$('#formConfirm').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget);
       var public_id = button.data('id');
@@ -169,24 +79,53 @@ $("#jae2").change(function (){
       document.getElementById("public_id").value = public_id;
   });
 
-    var table = $('#datatable').DataTable(); //mediante esta linea busca
+  $('input.tableflat').iCheck({
+          checkboxClass: 'icheckbox_flat-green',
+          radioClass: 'iradio_flat-green'
+      });
+  });
 
-    // Apply the search
-    table.columns().every( function () {
-        var that = this;
+  var asInitVals = new Array();
+  $(document).ready(function () {
+    var oTable = $('#example').dataTable({
+          "oLanguage": {
+              "sSearch": "Buscar:"
+          },
+          "aoColumnDefs": [
+              {
+                  'bSortable': false,
+                  'aTargets': [0]
+              } //disables sorting for column one
+            ],
+          'iDisplayLength': 12,
+          "sPaginationType": "full_numbers",
+          "dom": 'T<"clear">lfrtip',
+          "tableTools": {
+              "sSwfPath": "{{URL::to('vendor/gentellela/js/Datatables/tools/swf/copy_csv_xls_pdf.swf')}}"
+          }
+      });
 
-        $( 'input', this.header() ).on( 'keyup change', function () {
-            if ( that.search() !== this.value ) {
-                that
-                    .search( this.value )
-                    .draw();
-            }
-        } );
-		$("#datatable_filter").css("display", "none");
-    $("#datatable_length").css("display", "none");
-    } );
+      $("tfoot input").keyup(function () {
+          /* Filter on the column based on the index of this element's parent <th> */
+          oTable.fnFilter(this.value, $("tfoot th").index($(this).parent()));
+      });
+      $("tfoot input").each(function (i) {
+          asInitVals[i] = this.value;
+      });
+      $("tfoot input").focus(function () {
+          if (this.className == "search_init") {
+              this.className = "";
+              this.value = "";
+          }
+      });
+      $("tfoot input").blur(function (i) {
+          if (this.value == "") {
+              this.className = "search_init";
+              this.value = asInitVals[$("tfoot input").index(this)];
+          }
+      });
+  } );
 
-} );
 
 
 
